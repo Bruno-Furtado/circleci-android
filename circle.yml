@@ -1,3 +1,7 @@
+machine:
+  environment:
+    ADB_INSTALL_TIMEOUT: 8
+
 dependencies:
   pre:
     - echo y | android update sdk --no-ui --all --filter "build-tools-24.0.1"
@@ -12,7 +16,8 @@ test:
     # wait for it to have booted
     - circle-android wait-for-boot
     # run tests  against the emulator.
-    - ./gradlew connectedAndroidTest
+    - (./gradlew connectedAndroidTest):
+        timeout: 1200
     # copy the build outputs to artifacts
     - cp -r app/build/outputs $CIRCLE_ARTIFACTS
     # copy the test results to the test results directory.
