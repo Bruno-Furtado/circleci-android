@@ -4,7 +4,7 @@ A simple project to test integration between Android and CircleCI.
 
 # License
 
-This code is distributed under the terms and conditions of the [Apache License 2.0](LICENSE).
+This code is distributed under the terms and conditions of the [MIT License](LICENSE).
 
 # Change-log
 
